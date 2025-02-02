@@ -49,4 +49,12 @@ def sum_of_numbers():
         j += 1
     
     return sum
-    
+
+if __name__ == "__main__":
+    print(positive_or_negative(5))
+    print(positive_or_negative(0))
+    print(positive_or_negative(-5))
+
+    print(first_10_prime())
+
+    print(sum_of_numbers())

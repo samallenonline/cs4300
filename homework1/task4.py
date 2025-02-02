@@ -7,3 +7,8 @@ def calculate_discount(price, discount):
     # calculate final discounted price and return value
     price = price - (price * discount_decimal) 
     return price
+
+if __name__ == "__main__":
+    print(calculate_discount(50, 25))
+    print(calculate_discount(50, 0))
+    print(calculate_discount(50, 100))

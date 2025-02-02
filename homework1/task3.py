@@ -33,10 +33,10 @@ def first_10_prime():
         # if the number is prime, add to list and increment counter
         if is_prime == True: 
                 prime_list.append(num)
-                count = count + 1
+                count += 1
 
         # move on to next number 
-        num = num + 1
+        num += 1
     return prime_list
         
 
@@ -45,9 +45,8 @@ def sum_of_numbers():
     j = 0
     sum = 0
     while j <= 100:
-        sum = sum + j
-        j = j + 1
+        sum += j
+        j += 1
     
     return sum
-
-print(first_10_prime())
+    

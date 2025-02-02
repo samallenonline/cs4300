@@ -5,5 +5,5 @@ def calculate_discount(price, discount):
     # calculate discount amount
     discount_decimal = discount / 100
     # calculate final discounted price and return value
-    price = price - price * discount_decimal 
+    price = price - (price * discount_decimal) 
     return price

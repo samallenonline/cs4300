@@ -18,5 +18,6 @@ def get_student_info():
     return student_database, student_database["Name"], student_database["ID"]
 
 if __name__ == "__main__":
+    # print the results of each function
     print(get_top_three_albums())
     print(get_student_info())

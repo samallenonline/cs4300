@@ -36,7 +36,7 @@ def create_test_function(target_function, file_name, expected_output):
     # assign the test function a name based on the name of the text file 
     test_function_name = f"test_{get_base_name(file_name)}"
     generate_test.__name__ = test_function_name
-    print(generate_test.__name__) # for testing
+    print(generate_test.__name__) # for debugging purposes
     
     # inject the test function into the global namespace so that it can be recognized by pytest
     globals()[test_function_name] = generate_test
@@ -46,7 +46,7 @@ for file, expected in zip(file_list, expected_output_list):
         create_test_function(count_words, file, expected)
 
 if __name__ == "__main__":
-    # print the number of words for each text file in file_list 
+    # print the number of words for each text file in file_list for debugging purposes
     for file in file_list:
         print(count_words(file))
         

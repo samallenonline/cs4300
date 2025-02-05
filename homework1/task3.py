@@ -51,6 +51,7 @@ def sum_of_numbers():
     return sum
 
 if __name__ == "__main__":
+    # print results for each function using various inputs
     print(positive_or_negative(5))
     print(positive_or_negative(0))
     print(positive_or_negative(-5))

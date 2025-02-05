@@ -6,9 +6,11 @@ def calculate_discount(price, discount):
     discount_decimal = discount / 100
     # calculate final discounted price and return value
     price = price - (price * discount_decimal) 
-    return price
+    return round(price, 2)
 
 if __name__ == "__main__":
+    # print the results of the function using various inputs
+    print(calculate_discount(50.49, 25))
+    print(calculate_discount(50, 25.50))
     print(calculate_discount(50, 25))
-    print(calculate_discount(50, 0))
-    print(calculate_discount(50, 100))
+    print(calculate_discount(19.99, 15.50))

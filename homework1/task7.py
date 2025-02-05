@@ -5,7 +5,7 @@
 # run ```pip3 install numpy```
 import numpy as np
 
-# method that performs matrix multiplication using numpy arrays 
+# function that performs matrix multiplication using numpy arrays 
 def matrix_multiplication():
     # create numpy arrays to use for multiplication
     matrix_a = np.array([[1,2], [3,4]])

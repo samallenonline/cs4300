@@ -3,8 +3,8 @@
 
 # PART A.
 # create lists to hold the names of input files and their corresponding expected outputs 
-file_list = ["task6_read_me.txt"]
-expected_output_list = [103]
+file_list = ["task6_read_me.txt", "task6_read_me2.txt", "task6_read_me3.txt"]
+expected_output_list = [103, 74, 15]
 
 # this function counts the number of words in a given text file 
 def count_words(file_name):

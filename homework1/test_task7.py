@@ -11,3 +11,5 @@ def test_matrix_multiplication():
 
     # must use np.testing to compare the numpy data structures for effective testing 
     np.testing.assert_array_equal(actual_result, expected_result)
+    # test the type of value returned by the function
+    assert type(matrix_multiplication()) == np.ndarray

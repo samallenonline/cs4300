@@ -2,9 +2,23 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Base Page</title>
+    <title>Home Page</title>
   </head>
   <body>
-    <p>Welcome to the App!!</p>
+    <p>Welcome to the Home Page!</p>
+    <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <span class="nav-link">Welcome, {{ user.username }}</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+        {% endif %}
+    </ul>
   </body>
 </html>

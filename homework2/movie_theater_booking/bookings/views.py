@@ -3,6 +3,7 @@ from rest_framework import viewsets
 from .models import Movie, Seat, Booking 
 from .serializers import MovieSerializer, SeatSerializer, BookingSerializer 
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 from django.http import HttpResponse
@@ -45,6 +46,7 @@ def seat_booking(request):
     seats = Seat.objects.filter(booking_status=False)
     return render(request, 'bookings/seat_booking.html', {'seats': seats})
 
+@login_required
 def booking_history(request):
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'bookings/booking_history.html', {'bookings': bookings})

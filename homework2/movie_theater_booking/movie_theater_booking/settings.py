@@ -139,3 +139,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ],
 }
+
+# Authentication settings
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'bookings/'  # Redirect to home page after login
+LOGOUT_REDIRECT_URL = 'bookings/'  # Redirect to home page after logout

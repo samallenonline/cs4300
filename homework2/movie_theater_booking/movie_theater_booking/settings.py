@@ -141,6 +141,6 @@ REST_FRAMEWORK = {
 }
 
 # Authentication settings
-LOGIN_URL = '/bookings/account/login'
+LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/bookings/movies/'
 LOGOUT_REDIRECT_URL = '/bookings/movies/'

@@ -151,3 +151,6 @@ LOGIN_URL = '/proxy/8000/bookings/login/'
 LOGIN_REDIRECT_URL = '/bookings/movies/'
 LOGOUT_REDIRECT_URL = '/bookings/movies/'
 
+import os
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

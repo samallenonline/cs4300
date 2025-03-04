@@ -3,14 +3,37 @@
 {% block title %}Movie List{% endblock %}
 
 {% block content %}
-    <h2>Available Movies</h2>
-    <ul class="list-group">
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Movies Out Now</h2>
+    
+    <div class="row">
         {% for movie in movies %}
-            <li class="list-group-item">
-                <h5>{{ movie.title }}</h5>
-                <p>{{ movie.description }}</p>
-                <a href="/proxy/8000/bookings/seats/" class="btn btn-primary">Book Now</a>
-            </li>
+            <div class="col-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="row g-0">
+                        <!-- Left: Movie Poster -->
+                        <div class="col-md-4">
+                            {% if movie.poster %}
+                                <img src="{{ movie.poster.url }}" class="img-fluid rounded-start" alt="{{ movie.title }}">
+                            {% else %}
+                                <img src="https://via.placeholder.com/300x450" class="img-fluid rounded-start" alt="No Image Available">
+                            {% endif %}
+                        </div>
+
+                        <!-- Right: Movie Info -->
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ movie.title }}</h5>
+                                <p class="card-text">{{ movie.description }}</p>
+                                <p class="text-muted">Duration: {{ movie.duration }} min</p>
+                                <p class="text-muted">Release Date: {{ movie.release_date }}</p>
+                                <a href="/proxy/8000/bookings/seats/" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
+</div>
 {% endblock %}

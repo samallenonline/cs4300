@@ -144,3 +144,10 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [],  # Remove all authentication methods
 }
+
+# Redirect settings 
+
+LOGIN_URL = '/proxy/8000/bookings/login/'
+LOGIN_REDIRECT_URL = '/bookings/movies/'
+LOGOUT_REDIRECT_URL = '/bookings/movies/'
+

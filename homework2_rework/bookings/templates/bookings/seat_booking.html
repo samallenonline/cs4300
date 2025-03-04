@@ -8,7 +8,7 @@
         {% for seat in seats %}
             <li class="list-group-item">
                 <span>Seat: {{ seat.seat_number }}</span>
-                <form method="POST" action="{% url 'seat_booking' %}">
+                <form method="POST" action="/proxy/8000/bookings/seats/">
                     {% csrf_token %}
                     <input type="hidden" name="seat_id" value="{{ seat.id }}">
                     <button type="submit" class="btn btn-success">Book This Seat</button>

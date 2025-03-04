@@ -9,7 +9,7 @@
             <li class="list-group-item">
                 <h5>{{ movie.title }}</h5>
                 <p>{{ movie.description }}</p>
-                <a href="{% url 'seat_booking' %}" class="btn btn-primary">Book Now</a>
+                <a href="/proxy/8000/bookings/seats/" class="btn btn-primary">Book Now</a>
             </li>
         {% endfor %}
     </ul>

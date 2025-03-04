@@ -10,18 +10,18 @@
         {% for movie in movies %}
             <div class="col-12 mb-4">
                 <div class="card shadow-sm">
-                    <div class="row g-0">
+                    <div class="row g-0 align-items-center">
                         <!-- Left: Movie Poster -->
-                        <div class="col-md-4">
+                        <div class="col-md-3 d-flex justify-content-center" style="padding-left: 10px;">
                             {% if movie.poster %}
-                                <img src="{{ movie.poster.url }}" class="img-fluid rounded-start" alt="{{ movie.title }}">
+                                <img src="{{ movie.poster.url }}" class="img-fluid rounded-start" alt="{{ movie.title }}" style="width: 250px; height: 250px; object-fit: cover;">
                             {% else %}
-                                <img src="https://via.placeholder.com/300x450" class="img-fluid rounded-start" alt="No Image Available">
+                                <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="No Image Available" style="width: 250px; height: 250px; object-fit: cover;">
                             {% endif %}
                         </div>
 
                         <!-- Right: Movie Info -->
-                        <div class="col-md-8">
+                        <div class="col-md-9">
                             <div class="card-body">
                                 <h5 class="card-title">{{ movie.title }}</h5>
                                 <p class="card-text">{{ movie.description }}</p>

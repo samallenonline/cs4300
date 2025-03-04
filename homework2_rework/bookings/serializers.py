@@ -12,7 +12,7 @@ class SeatSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class BookingSerializer(serializers.ModelSerializer):
-    user = serializers.StringRelatedField()  # Show username instead of ID
+    user = serializers.StringRelatedField()  # show username instead of ID
 
     class Meta:
         model = Booking

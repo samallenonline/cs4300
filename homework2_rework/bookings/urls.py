@@ -10,8 +10,8 @@ router.register(r'seats', SeatViewSet)
 router.register(r'bookings', BookingViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),  # API endpoints
-    path('', views.movie_list, name='movie_list'),  # Default page (Movie list)
+    path('api/', include(router.urls)), 
+    path('', views.movie_list, name='movie_list'), 
     path('movies/', views.movie_list, name='movie_list'),
     path('seats/', views.seat_booking, name='seat_booking'),
     path('history/', views.booking_history, name='booking_history'),

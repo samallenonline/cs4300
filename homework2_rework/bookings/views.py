@@ -24,7 +24,7 @@ class BookingViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
-# Utilize templates 
+# utilize templates 
 
 def movie_list(request):
     movies = Movie.objects.all()
@@ -32,16 +32,16 @@ def movie_list(request):
 
 
 def seat_booking(request, movie_id):
-    movie = get_object_or_404(Movie, id=movie_id)  # Get the selected movie
-    seats = Seat.objects.filter(movie=movie, booking_status=False)  # Show only available seats for this movie
+    movie = get_object_or_404(Movie, id=movie_id)  # get selected movie
+    seats = Seat.objects.filter(movie=movie, booking_status=False)  # show only available seats for selected movie 
 
     if request.method == 'POST':
         seat_id = request.POST.get('seat_id')
-        seat = get_object_or_404(Seat, id=seat_id, movie=movie)  # Ensure the seat belongs to this movie
-        seat.booking_status = True  # Mark the seat as booked
+        seat = get_object_or_404(Seat, id=seat_id, movie=movie)  # ensure seat belongs to selected movie 
+        seat.booking_status = True  # mark seat as booked
         seat.save()
 
-        Booking.objects.create(user=request.user, seat=seat, movie=movie)  # Save booking with correct movie
+        Booking.objects.create(user=request.user, seat=seat, movie=movie)  # save booking with correct movie
         return redirect('booking_history')
 
     return render(request, 'bookings/seat_booking.html', {'movie': movie, 'seats': seats})

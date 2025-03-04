@@ -11,7 +11,7 @@
             <div class="col-12 mb-4">
                 <div class="card shadow-sm">
                     <div class="row g-0 align-items-center">
-                        <!-- Left: Movie Poster -->
+                        <!-- movie poster/visual -->
                         <div class="col-md-3 d-flex justify-content-center" style="padding-left: 10px;">
                             {% if movie.poster %}
                                 <img src="{{ movie.poster.url }}" class="img-fluid rounded-start" alt="{{ movie.title }}" style="width: 250px; height: 250px; object-fit: cover;">
@@ -20,7 +20,7 @@
                             {% endif %}
                         </div>
 
-                        <!-- Right: Movie Info -->
+                        <!-- movie information -->
                         <div class="col-md-9">
                             <div class="card-body">
                                 <h5 class="card-title">{{ movie.title }}</h5>

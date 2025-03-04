@@ -13,7 +13,7 @@ class Movie(models.Model):
         return self.title
 
 class Seat(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="seats")  # Link seats to movies
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="seats")  # link seats to movies
     seat_number = models.CharField(max_length=10)
     booking_status = models.BooleanField(default=False)  # False = Available, True = Booked
 

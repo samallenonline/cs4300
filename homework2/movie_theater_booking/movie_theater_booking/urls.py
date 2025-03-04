@@ -18,8 +18,10 @@ from django.contrib import admin
 from django.urls import include, path
 from django.contrib.auth import views as auth_views 
 
+# In movie_theater_booking/urls.py
 urlpatterns = [
     path("bookings/", include("bookings.urls")),
     path("admin/", admin.site.urls),
-    path("accounts/", include("django.contrib.auth.urls")),
+    path('accounts/login/', auth_views.LoginView.as_view(), name='login'), 
+    path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
 ]

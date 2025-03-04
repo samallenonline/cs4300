@@ -1,9 +1,12 @@
-from django.shortcuts import render
 from rest_framework import viewsets 
 from .models import Movie, Seat, Booking 
 from .serializers import MovieSerializer, SeatSerializer, BookingSerializer 
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 
 # Create your views here.
 from django.http import HttpResponse
@@ -50,3 +53,6 @@ def seat_booking(request):
 def booking_history(request):
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'bookings/booking_history.html', {'bookings': bookings})
+
+def login_view(request):
+    return HttpResponse("You have reached the login page.")  # Debug message

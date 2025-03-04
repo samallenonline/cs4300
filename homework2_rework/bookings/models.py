@@ -1,10 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# create necessary models 
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    duration = models.IntegerField()  # in minutes 
+    duration = models.IntegerField() # in minutes 
     release_date = models.DateField()
     showing_date = models.DateTimeField()  
     poster = models.ImageField(upload_to='movie_posters/', blank=True, null=True)  

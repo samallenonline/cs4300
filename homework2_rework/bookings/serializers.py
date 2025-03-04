@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Movie, Seat, Booking
 
+# serializers for all models to convert them to JSON format
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie

@@ -1,19 +1,45 @@
 {% extends 'bookings/base.html' %}
 
-{% block title %}Book a Seat{% endblock %}
+{% block title %}Select a Seat{% endblock %}
 
 {% block content %}
-    <h2>Available Seats</h2>
-    <ul class="list-group">
-        {% for seat in seats %}
-            <li class="list-group-item">
-                <span>Seat: {{ seat.seat_number }}</span>
-                <form method="POST" action="/bookings/seats/">
-                    {% csrf_token %}
-                    <input type="hidden" name="seat_id" value="{{ seat.id }}">
-                    <button type="submit" class="btn btn-success">Book This Seat</button>
-                </form>
-            </li>
-        {% endfor %}
-    </ul>
+<div class="container d-flex justify-content-center align-items-center" style="height: 70vh;">
+    <div class="card shadow-lg p-4 rounded" style="width: 600px; height: 500px;"> 
+        <h4 class="text-center">{{ movie.title }}</h4>
+        <hr>
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="movie_id" value="{{ movie.id }}">
+
+            <div class="mb-3">
+                <label for="seat_id" class="form-label">Choose a seat:</label>
+                <select name="seat_id" class="form-select rounded" required onchange="updateBookingSummary()">
+                    <option value="" disabled selected>-- Select a seat --</option>
+                    {% for seat in seats %}
+                        <option value="{{ seat.id }}">{{ seat.seat_number }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            
+            <div class="border p-3 rounded bg-light mb-3">
+                <h6 class="text-center">Booking Review</h6>
+                <p><strong>Movie:</strong> {{ movie.title }}</p>
+                <p><strong>Seat:</strong> <span id="selected-seat">Not selected</span></p>
+                <p><strong>Location:</strong> HEL!X Cinemas, Somewhere On The Web, 1688</p> 
+            </div>
+
+            <button type="submit" class="btn btn-success w-100" style="background-color: #145d6e; color: white;">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function updateBookingSummary() {
+        var seatDropdown = document.querySelector("select[name='seat_id']");
+        var selectedSeat = seatDropdown.options[seatDropdown.selectedIndex].text;
+        document.getElementById("selected-seat").innerText = selectedSeat !== "-- Select a seat --" ? selectedSeat : "Not selected";
+    }
+</script>
 {% endblock %}

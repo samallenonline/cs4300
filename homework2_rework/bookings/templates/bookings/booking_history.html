@@ -3,14 +3,17 @@
 {% block title %}My Bookings{% endblock %}
 
 {% block content %}
-    <h2>My Booking History</h2>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">My Bookings</h2>
+    
     <ul class="list-group">
         {% for booking in bookings %}
             <li class="list-group-item">
-                <strong>Movie:</strong> {{ booking.movie.title }} <br>
-                <strong>Seat:</strong> {{ booking.seat.seat_number }} <br>
-                <strong>Date:</strong> {{ booking.booking_date }}
+                <h5>{{ booking.movie.title }}</h5>
+                <p><strong>Seat:</strong> {{ booking.seat.seat_number }}</p>
+                <p class="text-muted"><strong>Showing Date:</strong> {{ booking.movie.showing_date|date:"F j, Y, g:i A" }}</p>
             </li>
         {% endfor %}
     </ul>
+</div>
 {% endblock %}

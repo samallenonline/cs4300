@@ -26,8 +26,9 @@
                                 <h5 class="card-title">{{ movie.title }}</h5>
                                 <p class="card-text">{{ movie.description }}</p>
                                 <p class="text-muted">Duration: {{ movie.duration }} min</p>
-                                <p class="text-muted">Release Date: {{ movie.release_date }}</p>
-                                <a href="/bookings/seats/" class="btn btn-primary">Book Now</a>
+                                <p class="text-muted">Release Date: {{ movie.release_date|date:"F j, Y" }}</p>
+                                <p class="text-muted">Showing Date: {{ movie.showing_date|date:"F j, Y, g:i A" }}</p>
+                                <a href="{% url 'seat_booking' movie.id %}" class="btn" style="background-color: #145d6e; color: white;">Book Now</a>
                             </div>
                         </div>
                     </div>

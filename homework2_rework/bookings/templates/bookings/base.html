@@ -9,7 +9,7 @@
         /* Custom styling for the navbar title */
         .custom-title {
             font-size: 2rem; 
-            font-weight: regular; 
+            font-weight: bold; 
             color: #f6f6f6 !important; 
             letter-spacing: 2px; 
             text-align: center;
@@ -18,11 +18,12 @@
         /* Center align the navbar content */
         .navbar {
             justify-content: center; /* Center the navbar elements */
+            height: 100px; /* Adjust height as needed */
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg" style="background-color: #145d6e;">
         <div class="container">
             <a class="navbar-brand custom-title" href="/bookings/movies/">.·:*¨HEL!X Cinemas¨*:·.</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -30,13 +31,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/bookings/movies/">Movies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/bookings/seats/">Book Seats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/bookings/movies/" style="color: #f6f6f6 !important; font-weight: bold;">Movies</a></li>
                     {% if user.is_authenticated %}
-                        <li class="nav-item"><a class="nav-link" href="/bookings/history/">My Bookings</a></li>
-                        <li class="nav-item"><a class="nav-link text-danger" href="/accounts/logout/">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/bookings/history/" style="color: #f6f6f6 !important; font-weight: bold;">My Bookings</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/accounts/logout/" style="color: black !important; font-weight: bold;">Logout</a></li>
                     {% else %}
-                        <li class="nav-item"><a class="nav-link text-success" href="/accounts/login/">Login</a></li>
+                        <li class="nav-item"><a class="nav-link text-success" href="/accounts/login/" style="font-weight: bold;">Login</a></li>
                     {% endif %}
                 </ul>
             </div>

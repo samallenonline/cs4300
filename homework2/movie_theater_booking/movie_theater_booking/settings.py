@@ -141,6 +141,11 @@ REST_FRAMEWORK = {
 }
 
 # Authentication settings
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/movies/'
 LOGOUT_REDIRECT_URL = '/movies/'
+
+import sys
+
+# Debugging
+print(f"🔍 LOGIN_REDIRECT_URL: {LOGIN_REDIRECT_URL}", file=sys.stderr)

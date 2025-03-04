@@ -7,6 +7,4 @@ urlpatterns = [
     path('movies/', views.movie_list, name='movie_list'),
     path('seats/', views.seat_booking, name='seat_booking'),
     path('history/', views.booking_history, name='booking_history'),
-    path('accounts/login/', views.login_view, name='login'),
-    path('logout/', LogoutView.as_view(next_page='home'), name='logout'),
 ]

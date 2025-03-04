@@ -53,6 +53,3 @@ def seat_booking(request):
 def booking_history(request):
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'bookings/booking_history.html', {'bookings': bookings})
-
-def login_view(request):
-    return HttpResponse("You have reached the login page.")  # Debug message

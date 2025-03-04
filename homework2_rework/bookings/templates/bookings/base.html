@@ -24,19 +24,19 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand custom-title" href="/proxy/8000/bookings/movies/">HEL!X Cinemas</a>
+            <a class="navbar-brand custom-title" href="/bookings/movies/">.·:*¨HEL!X Cinemas¨*:·.</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/proxy/8000/bookings/movies/">Movies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/proxy/8000/bookings/seats/">Book Seats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/bookings/movies/">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/bookings/seats/">Book Seats</a></li>
                     {% if user.is_authenticated %}
-                        <li class="nav-item"><a class="nav-link" href="/proxy/8000/bookings/history/">My Bookings</a></li>
-                        <li class="nav-item"><a class="nav-link text-danger" href="/proxy/8000/accounts/logout/">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/bookings/history/">My Bookings</a></li>
+                        <li class="nav-item"><a class="nav-link text-danger" href="/accounts/logout/">Logout</a></li>
                     {% else %}
-                        <li class="nav-item"><a class="nav-link text-success" href="/proxy/8000/accounts/login/">Login</a></li>
+                        <li class="nav-item"><a class="nav-link text-success" href="/accounts/login/">Login</a></li>
                     {% endif %}
                 </ul>
             </div>

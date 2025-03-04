@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h2 class="text-center mb-4">Movies Out Now</h2>
+    <h2 class="text-center mb-4">Movies Playing Now</h2>
     
     <div class="row">
         {% for movie in movies %}
@@ -27,7 +27,7 @@
                                 <p class="card-text">{{ movie.description }}</p>
                                 <p class="text-muted">Duration: {{ movie.duration }} min</p>
                                 <p class="text-muted">Release Date: {{ movie.release_date }}</p>
-                                <a href="/proxy/8000/bookings/seats/" class="btn btn-primary">Book Now</a>
+                                <a href="/bookings/seats/" class="btn btn-primary">Book Now</a>
                             </div>
                         </div>
                     </div>

@@ -34,4 +34,4 @@ Username: test
 Password: test
 
 ## AI Usage 
-ChatGPT was utilized to generate code for certain sections of this project. AI-generated code was used to complete parts 3.3, 3.4 and 3.6 of the assignment, as well as for general debugging. The AI-generated content was used for reference, and most of the code for the HTML templates was taken directly from chatGPT given my time constraints. 
+ChatGPT was utilized to generate code for certain sections of this project. AI-generated code was used to complete parts 3.3, 3.4 and 3.6 of the assignment, as well as for general debugging. The code for the HTML templates was taken directly from ChatGPT given my time constraints, however most of the AI-generated content was used for reference.
